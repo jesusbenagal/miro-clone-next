@@ -20,6 +20,7 @@ export const Participants = () => {
           <UserAvatar
             key={connectionId}
             src={info?.picture}
+            name={info?.name}
             fallback={info?.name?.[0]}
             borderColor={connectionIdToColor(connectionId)}
           />
