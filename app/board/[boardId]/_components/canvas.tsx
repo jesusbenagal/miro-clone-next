@@ -45,7 +45,7 @@ interface CanvasProps {
 }
 
 export const Canvas = ({ boardId }: CanvasProps) => {
-  const layerIds = useStorage((root) => root.layersId);
+  const layerIds = useStorage((root) => root.layersIds);
 
   const [canvasState, setCanvasState] = useState<CanvasState>({
     mode: CanvasMode.None,
@@ -76,7 +76,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
         return;
       }
 
-      const liveLayerIds = storage.get("layersId");
+      const liveLayerIds = storage.get("layersIds");
       const layerId = nanoid();
       const layer = new LiveObject({
         type: layerType,
