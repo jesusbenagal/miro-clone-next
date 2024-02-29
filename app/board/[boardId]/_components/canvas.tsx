@@ -10,6 +10,7 @@ import { Toolbar } from "./toolbar";
 import { CursorsPresence } from "./cursors-presence";
 import { LayerPreview } from "./layer-preview";
 import { SelectionBox } from "./selection-box";
+import { SelectionTools } from "./selection-tools";
 
 import {
   useHistory,
@@ -268,6 +269,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
         canUndo={canUndo}
         canRedo={canRedo}
       />
+      <SelectionTools camera={camera} setLastUsedColor={setLastUsedColor} />
       <svg
         className="w-[100vw] h-[100vh]"
         onWheel={onWheel}
